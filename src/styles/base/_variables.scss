@@ -1,8 +1,12 @@
+@import url("https://use.typekit.net/bnv5cmf.css");
+
 //Fuentes
 $delgada: 300;
 $regular: 400;
 $bold: 700;
 $black: 900;
+
+$fuente_principal: "source-sans-3", sans-serif;
 
 //Tamaño de media queries
 $telefono_pequeno: 480px;
@@ -15,16 +19,11 @@ $desktop_grande: 1920px;
 
 //colores
 $negro: #000000;
-$gris: #181818;
-$gris_claro: #afafaf;
-$grisCards: #08090e;
-$verde: #01ea00;
-$amarillo: #fbb515;
 $blanco: #ffffff;
-$fondo_secundario: #232429;
-
+$fondo_gris: #e4e4e4;
+$tipografia_gris: #757575;
+$color_primario: #ff0000;
 
 $whatsapp: #25d366;
 
 $tr: all 0.1s ease 0s;
-

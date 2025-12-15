@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(3rem, 6vw, 9rem);
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
 }
 
 h3 {
@@ -44,6 +44,7 @@ h4 {
 p {
   font-size: clamp(1.4rem, 1.5vw, 1.6rem);
   text-align: justify;
+  color: v.$tipografia_gris;
 }
 
 label,

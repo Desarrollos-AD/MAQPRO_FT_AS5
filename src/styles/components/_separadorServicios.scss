@@ -1,0 +1,38 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as mx;
+
+.separadorServicios {
+  h2 {
+    margin: 3rem 0 1rem 0;
+  }
+  &__barra {
+    background-color: v.$color_primario;
+    width: 100%;
+    height: 2rem;
+    border: 0.1rem solid v.$negro;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    @include mx.telefono-grande {
+      gap: 5rem;
+      flex-direction: row;
+    }
+    &--card {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+      align-items: center;
+      @include mx.telefono-grande {
+        margin: 5rem 0;
+      }
+      .icono {
+        background-color: v.$fondo_gris;
+        width: 8rem;
+        height: auto;
+        padding: 0.5rem;
+        border-radius: 30%;
+      }
+    }
+  }
+}
