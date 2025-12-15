@@ -1,0 +1,81 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as mx;
+
+.contacto {
+  h3 {
+    color: v.$tipografia_gris;
+  }
+  &__contenido {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    @include mx.tablet-pequena {
+      flex-direction: row;
+    }
+
+    &--mapa {
+    }
+    &--cards {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      margin: 5rem 0;
+      @include mx.telefono-grande {
+        gap: 2rem;
+      }
+      .card__ubicacion,
+      .card__telefono {
+        border-radius: 1rem;
+        box-shadow: 1px 2px 30px 3px rgba(138, 138, 138, 0.507);
+        -webkit-box-shadow: 1px 2px 30px 3px rgba(138, 138, 138, 0.507);
+        -moz-box-shadow: 1px 2px 30px 3px rgba(138, 138, 138, 0.507);
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+      }
+      p {
+        margin: 0rem 0 4rem 0;
+        text-align: center;
+      }
+      h3 {
+        font-weight: v.$bold;
+        @include mx.telefono-grande {
+          margin: 1rem;
+        }
+      }
+      .card__ubicacion {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .card__telefono {
+        flex: 5;
+      }
+
+      .card__icono {
+        width: 7rem;
+        height: 7rem;
+        padding: 2rem;
+        margin: 2rem auto;
+        border: 0.2rem solid v.$color_primario;
+        border-radius: 50%;
+        @include mx.telefono-grande {
+          margin-top: 2rem;
+        }
+
+        &::before {
+          content: " ";
+          background-color: v.$color_primario;
+          width: 3rem;
+          height: 3rem;
+          margin: 2rem;
+          position: absolute;
+          z-index: -1;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
