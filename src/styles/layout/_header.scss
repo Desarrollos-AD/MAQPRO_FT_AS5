@@ -1,0 +1,36 @@
+@use "../base/_variables.scss" as v;
+@use "../base/mixins" as mx;
+
+.header {
+  &__contenido {
+    height: 80vh;
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+    @include mx.telefono-mediano {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &--info {
+      h1 {
+        margin-bottom: 3rem;
+      }
+      @include mx.telefono-mediano {
+        h1 {
+          margin-bottom: 8rem;
+        }
+        flex: 1;
+      }
+    }
+    &--img {
+      @include mx.telefono-mediano {
+        flex: 1;
+
+        img {
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+}
