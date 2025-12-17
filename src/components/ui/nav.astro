@@ -1,0 +1,103 @@
+<div id="header" class="barraNav">
+  <div class="contenedor">
+    <div class="barraNav__items">
+      <div class="barraNav__items--img">
+        <a href="/">
+          <img
+            src="/public/images/maqpro.png"
+            alt="Logo MAQPRO"
+            loading="lazy"
+            width="800"
+            height="900"
+          />
+        </a>
+      </div>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" id="#inicio" class="active" >Inicio</a></li>
+          <li><a href="#servicios" id="#servicios">Servicios</a></li>
+          <li><a href="#contacto" id="#contacto">Contacto</a></li>
+        </ul>
+        <svg
+          class="mobile-nav-toggle"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M4 6l16 0"></path><path d="M4 12l16 0"></path><path
+            d="M4 18l16 0"></path></svg
+        >
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script is:client="load">
+  (function () {
+    "use strict";
+
+    function toggleScrolled() {
+      const selectBody = document.querySelector("body");
+      const selectHeader = document.querySelector("#header");
+      if (
+        !selectHeader.classList.contains("scroll-up-sticky") &&
+        !selectHeader.classList.contains("sticky-top") &&
+        !selectHeader.classList.contains("fixed-top")
+      )
+        return;
+      window.scrollY > 100
+        ? selectBody.classList.add("scrolled")
+        : selectBody.classList.remove("scrolled");
+    }
+
+    document.addEventListener("scroll", toggleScrolled);
+    window.addEventListener("load", toggleScrolled);
+
+    /**
+     * Mobile nav toggle
+     */
+    const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+
+    function mobileNavToogle() {
+      document.querySelector("body").classList.toggle("mobile-nav-active");
+      mobileNavToggleBtn.classList.toggle("bi-list");
+      mobileNavToggleBtn.classList.toggle("bi-x");
+    }
+    mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
+
+    /**
+     * Hide mobile nav on same-page/hash links
+     */
+    document.querySelectorAll("#navmenu a").forEach((navmenu) => {
+      navmenu.addEventListener("click", () => {
+        if (document.querySelector(".mobile-nav-active")) {
+          mobileNavToogle();
+        }
+      });
+    });
+
+    /**
+     * Toggle mobile nav dropdowns
+     */
+    document
+      .querySelectorAll(".navmenu .toggle-dropdown")
+      .forEach((navmenu) => {
+        navmenu.addEventListener("click", function (e) {
+          e.preventDefault();
+          this.parentNode.classList.toggle("active");
+          this.parentNode.nextElementSibling.classList.toggle(
+            "dropdown-active"
+          );
+          e.stopImmediatePropagation();
+        });
+      });
+  })();
+</script>
