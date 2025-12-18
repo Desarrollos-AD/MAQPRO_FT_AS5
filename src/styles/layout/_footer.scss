@@ -1,0 +1,46 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as mx;
+
+.footer {
+  width: 100%;
+  position: relative;
+  background-color: v.$color_primario;
+
+  &__contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 6rem;
+    margin: 5rem 0;
+
+    @include mx.telefono-grande {
+      flex-direction: row;
+    }
+
+    &--img {
+      width: 20rem;
+      background-color: v.$blanco;
+      border-radius: 5rem 1rem 5rem 1rem;
+    }
+
+    &--privacidad {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      p {
+        color: v.$blanco;
+      }
+
+      p,
+      a {
+        text-align: center;
+      }
+    }
+  }
+  &--img {
+    position: absolute;
+    width: 100%;
+  }
+}
