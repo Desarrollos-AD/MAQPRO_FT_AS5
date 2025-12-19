@@ -2,8 +2,14 @@
 @use "../base/mixins" as mx;
 
 .contacto {
+  margin: 5rem 0;
+  h2{
+    margin: .5rem;
+  }
   h3 {
     color: v.$tipografia_gris;
+    margin: .5rem;
+
   }
   &__contenido {
     display: flex;

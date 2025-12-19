@@ -3,14 +3,17 @@
 
 .servicios {
   &__cards {
-    @include mx.grid(2, 2rem);
+    margin-bottom: 5rem;
+    @include mx.grid(1, 2rem);
 
+    @include mx.telefono-mediano {
+      @include mx.grid(2, 2rem);
+    }
     @include mx.telefono-grande {
       @include mx.grid(3, 2.5rem);
     }
     @include mx.tablet-pequena {
       @include mx.grid(4, 2.5rem);
-      margin: 5rem auto;
       width: 90%;
     }
   }

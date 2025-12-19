@@ -3,11 +3,12 @@
 
 .header {
   &__contenido {
-    height: 80vh;
+    height: auto;
     display: flex;
     gap: 5rem;
     flex-direction: column;
     @include mx.telefono-mediano {
+      margin-top: 5rem;
       align-items: center;
       flex-direction: row;
       justify-content: space-between;
@@ -15,6 +16,10 @@
     &--info {
       h1 {
         margin-bottom: 3rem;
+
+        span{
+          color: v.$color-primario;
+        }
       }
       @include mx.telefono-mediano {
         h1 {

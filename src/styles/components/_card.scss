@@ -4,11 +4,15 @@
   position: relative;
   width: 100%;
   margin: 0 auto;
-  height: 40rem;
+  height: 35rem;
   border-radius: 14px;
   z-index: 1111;
   overflow: hidden;
   box-shadow: 1rem 2rem 2rem #bebebe, -1em -2rem 2rem v.$blanco;
+
+  @include mx.telefono-mediano {
+    height: 50rem;
+  }
 }
 
 .cardContenido {
@@ -33,10 +37,15 @@
     &--img {
       width: 10rem;
       margin: 2.5rem auto;
-    &:hover{
-      background-color: #ff5a5a;
-      border-radius: 50%;
+      &:hover {
+        background-color: #ff5a5a;
+        border-radius: 50%;
+      }
     }
+    &--info {
+      p {
+        text-align: justify;
+      }
     }
   }
 }
