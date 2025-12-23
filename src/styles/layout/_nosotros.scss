@@ -1,0 +1,55 @@
+@use "../base/_variables.scss" as v;
+@use "../base/mixins" as mx;
+.background {
+  background-color: v.$color_primario;
+  padding: 5rem 0;
+}
+
+.nosotros {
+  display: flex;
+  flex-direction: column;
+
+  &__vision,
+  &__mision {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+    align-items: center;
+
+    &--img,
+    &--info {
+      height: 35rem;
+      background-color: rgba(0, 0, 0, 0.205);
+      border-radius: 2rem;
+      margin: auto;
+
+      img {
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+    }
+    &--img {
+      flex: 1;
+      display: flex;
+      padding: 2rem;
+    }
+    &--info {
+      flex: 2;
+      padding: 0 2rem;
+    }
+  }
+
+  &__vision {
+  }
+
+  &__mision {
+  }
+  p {
+    color: v.$negro;
+  }
+  h2,
+  h3 {
+    color: v.$blanco;
+  }
+}
+

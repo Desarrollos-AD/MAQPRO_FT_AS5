@@ -2,13 +2,13 @@
 import BarraNav from "../ui/nav.astro";
 ---
 
-<header class="header">
+<header class="header section">
   <section id="inicio">
     <BarraNav />
     <div class="contenedor">
       <div class="header__contenido">
         <div class="header__contenido--info">
-          <h1>Bienvenido a <span>MAQPRO</span></h1>
+          <h1 class="link">Bienvenido a <span>MAQPRO</span></h1>
 
           <p>
             Ofrecemos soluciones completas para proyectos de construcción,
@@ -18,13 +18,14 @@ import BarraNav from "../ui/nav.astro";
             sector industrial comercial turístico, o de infraestructura.
           </p>
         </div>
-        <div class="header__contenido--img">
+        <div class="header__contenido--img  image-wrapper ">
           <img
             src="/public/images/header.png"
             alt="Imagen Servicios maqpro"
             loading="lazy"
             width="900"
             height="800"
+            
           />
         </div>
       </div>
