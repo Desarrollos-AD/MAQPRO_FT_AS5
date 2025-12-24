@@ -2,7 +2,10 @@
 @use "../base/mixins" as mx;
 
 .consultoria {
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
+  @include mx.telefono-mediano {
+    margin-bottom: 5rem;
+  }
   &__contenido {
     display: flex;
     gap: 20rem;

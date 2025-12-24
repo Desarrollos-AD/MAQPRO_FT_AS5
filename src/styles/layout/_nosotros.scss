@@ -2,12 +2,53 @@
 @use "../base/mixins" as mx;
 .background {
   background-color: v.$color_primario;
-  padding: 5rem 0;
+  padding-bottom: 5rem;
 }
 
 .nosotros {
-  display: flex;
-  flex-direction: column;
+  @include mx.tablet-pequena {
+    @include mx.grid(5, 0 2rem);
+  }
+
+  &__contenedor {
+    margin: 0 auto;
+    width: min(90%, 170rem);
+    overflow: hidden;
+
+    h2 {
+      color: v.$blanco;
+    }
+  }
+
+  &__valores {
+    background-color: v.$blanco;
+    border-radius: 2rem;
+    padding: 2rem 4rem 4rem 4rem;
+    margin-top: 2rem;
+
+    grid-column: 4/6;
+    grid-row: 1/3;
+
+    @include mx.tablet-pequena {
+      margin-top: 0;
+    }
+
+    &--info {
+      h3 {
+        color: v.$color_primario;
+        font-weight: v.$bold;
+      }
+    }
+
+    &--item {
+      margin-bottom: 3rem;
+
+      h4 {
+        font-weight: v.$black;
+        text-align: unset;
+      }
+    }
+  }
 
   &__vision,
   &__mision {
@@ -15,13 +56,32 @@
     gap: 2rem;
     margin: 1rem 0;
     align-items: center;
+    flex-direction: column;
+
+    @include mx.telefono-mediano {
+      flex-direction: row;
+    }
 
     &--img,
     &--info {
-      height: 35rem;
-      background-color: rgba(0, 0, 0, 0.205);
+      height: 45rem;
+      background-color: v.$blanco;
       border-radius: 2rem;
+
+      h3 {
+        font-weight: v.$black;
+      }
+      @include mx.tablet-pequena {
+        height: 60rem;
+      }
+      @include mx.tablet-grande {
+        height: 40rem;
+      }
+      @include mx.desktop-mediana {
+        height: 35rem;
+      }
       margin: auto;
+      overflow: hidden;
 
       img {
         object-fit: cover;
@@ -35,21 +95,22 @@
     }
     &--info {
       flex: 2;
-      padding: 0 2rem;
+      padding: 0 4rem;
+
+      p {
+        padding-bottom: 4rem;
+      }
     }
   }
 
   &__vision {
+    grid-column: 1/4;
+    grid-row: 1/2;
   }
 
   &__mision {
+    grid-column: 1/4;
+    grid-row: 2/3;
   }
-  p {
-    color: v.$negro;
-  }
-  h2,
-  h3 {
-    color: v.$blanco;
-  }
+  color: v.$color_primario;
 }
-

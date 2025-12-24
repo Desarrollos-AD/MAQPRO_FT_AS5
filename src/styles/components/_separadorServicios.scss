@@ -13,7 +13,7 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    @include mx.telefono-grande {
+    @include mx.tablet-pequena {
       gap: 5rem;
       flex-direction: row;
     }
@@ -22,12 +22,22 @@
       gap: 2rem;
       margin: 2rem 0;
       align-items: center;
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+      }
       @include mx.telefono-grande {
         margin: 5rem 0;
+
+        @include mx.tablet-pequena {
+          &:nth-child(2) {
+            flex-direction:unset;
+          }
+        }
       }
+
       .icono {
         background-color: v.$fondo_gris;
-        width: 8rem;
+        width: 20rem;
         height: auto;
         padding: 0.5rem;
         border-radius: 30%;

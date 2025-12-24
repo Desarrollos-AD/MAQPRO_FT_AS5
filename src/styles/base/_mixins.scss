@@ -60,6 +60,7 @@
   cursor: pointer;
   font-size: clamp(1.8rem, 2vw, 2.2rem);
   border-radius: $borderRadius;
+  text-transform: uppercase;
 
   &:hover {
     background-color: color.scale($bgColor, $lightness: -15%);

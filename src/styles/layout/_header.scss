@@ -27,6 +27,10 @@
         }
         flex: 1;
       }
+
+      .btn_rojo{
+        @include mx.boton(v.$color_primario, inline-block, 1rem, v.$blanco);
+      }
     }
     &--img {
       @include mx.telefono-mediano {
