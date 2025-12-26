@@ -1,0 +1,45 @@
+@use "../base/_variables.scss" as v;
+@use "../base/mixins" as mx;
+
+.header {
+  &__contenido {
+    height: auto;
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+    @include mx.telefono-mediano {
+      margin-top: 5rem;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &--info {
+      h1 {
+        margin-bottom: 3rem;
+
+        span{
+          color: v.$color-primario;
+        }
+      }
+      @include mx.telefono-mediano {
+        h1 {
+          margin-bottom: 8rem;
+        }
+        flex: 1;
+      }
+
+      .btn_rojo{
+        @include mx.boton(v.$color_primario, inline-block, 1rem, v.$blanco);
+      }
+    }
+    &--img {
+      @include mx.telefono-mediano {
+        flex: 1;
+
+        img {
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@use "variables" as v;
+@use "sass:color";
+
+@mixin telefono-pequeno {
+  @media (min-width: v.$telefono_pequeno) {
+    @content;
+  }
+}
+
+@mixin telefono-mediano {
+  @media (min-width: v.$telefono_mediano) {
+    @content;
+  }
+}
+
+@mixin telefono-grande {
+  @media (min-width: v.$telefono_grande) {
+    @content;
+  }
+}
+
+@mixin tablet-pequena {
+  @media (min-width: v.$tablet_pequena) {
+    @content;
+  }
+}
+
+@mixin tablet-grande {
+  @media (min-width: v.$tablet_grande) {
+    @content;
+  }
+}
+
+@mixin desktop-mediana {
+  @media (min-width: v.$desktop_mediana) {
+    @content;
+  }
+}
+
+@mixin desktop-grande {
+  @media (min-width: v.$desktop_grande) {
+    @content;
+  }
+}
+
+@mixin grid($columnas, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columnas, 1fr);
+  gap: $gap;
+}
+
+@mixin boton($bgColor, $display, $borderRadius, $txtColor) {
+  background-color: $bgColor;
+  font-weight: v.$black;
+  padding: 1rem 3rem;
+  text-align: center;
+  margin: 2.5rem 0;
+  display: $display;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(1.8rem, 2vw, 2.2rem);
+  border-radius: $borderRadius;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: color.scale($bgColor, $lightness: -15%);
+  }
+  a {
+    color: $txtColor;
+  }
+}
+
+@mixin imgFondo($rutaImg) {
+  background-image: url($rutaImg);
+}

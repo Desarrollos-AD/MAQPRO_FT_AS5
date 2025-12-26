@@ -1,0 +1,21 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as mx;
+
+.servicios {
+  &__cards {
+    margin: 0 auto 5rem auto ;
+    padding: 2rem 3rem;
+    @include mx.grid(1, 2rem);
+
+    @include mx.telefono-mediano {
+      @include mx.grid(2, 2rem);
+    }
+    @include mx.telefono-grande {
+      @include mx.grid(3, 2.5rem);
+    }
+    @include mx.tablet-pequena {
+      @include mx.grid(4, 2.5rem);
+      width: 90%;
+    }
+  }
+}

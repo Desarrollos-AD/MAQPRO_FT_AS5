@@ -1,0 +1,20 @@
+---
+const { titulo } = Astro.props;
+const { info } = Astro.props;
+const { img } = Astro.props;
+---
+
+<div class="card">
+  <div class="cardContenido">
+    <div class="contenedor">
+      <div class="cardContenido__items">
+        <div class="cardContenido__items--img img-reveal">
+          <img src={img} alt="Icono servicio" loading="lazy" width="900" height="800" />
+        </div>
+        <div class="cardContenido__items--titulo"><h4>{titulo}</h4></div>
+        <div class="cardContenido__items--info"><p>{info}</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="blob"></div>
+</div>

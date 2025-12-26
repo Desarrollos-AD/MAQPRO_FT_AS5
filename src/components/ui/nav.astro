@@ -1,0 +1,85 @@
+<div id="header" class="barraNav">
+  <div class="contenedor">
+    <div class="barraNav__items">
+      <div class="barraNav__items--img">
+        <a href="/">
+          <img
+            src="/images/maqpro.png"
+            alt="Logo MAQPRO"
+            loading="lazy"
+            width="800"
+            height="900"
+          />
+        </a>
+      </div>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+
+        <svg
+          class="mobile-nav-toggle"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M4 6l16 0"></path>
+          <path d="M4 12l16 0"></path>
+          <path d="M4 18l16 0"></path>
+        </svg>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script is:client="load">
+  (function () {
+    "use strict";
+    /**
+     * Mobile nav toggle
+     */
+    const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+
+    function mobileNavToogle() {
+      document.querySelector("body").classList.toggle("mobile-nav-active");
+    }
+    mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
+  })();
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function activarMenu() {
+      let scrollY = window.pageYOffset;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${sectionId}`) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener("scroll", activarMenu);
+  });
+</script>
