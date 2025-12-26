@@ -36,7 +36,7 @@
     &--info {
       h3 {
         color: v.$color_primario;
-        font-weight: v.$bold;
+        font-weight: v.$black;
       }
     }
 
@@ -44,7 +44,7 @@
       margin-bottom: 3rem;
 
       h4 {
-        font-weight: v.$black;
+        font-weight: v.$bold;
         text-align: unset;
       }
     }
